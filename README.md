@@ -1,2 +1,2 @@
-# A Bayesian Tensor Completion Technique - BGCP
+# BGCP: a Bayesian tensor completion technique
 Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation.
