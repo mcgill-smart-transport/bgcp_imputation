@@ -1,10 +1,10 @@
-function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(original_tensor,sparse_tensor,varargin)
+function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_tensor,varargin)
 % This is a function for Bayesian Gaussian CP decomposition (BGCP) using Gibbs sampling.
 
 	dim = size(sparse_tensor);
 	d = length(dim);
 	position = find(sparse_tensor~=0);
-	pos = find(original_tensor>0 & sparse_tensor==0);
+	pos = find(dense_tensor>0 & sparse_tensor==0);
 	binary_tensor = zeros(dim);
 	binary_tensor(position) = 1;
 
@@ -59,7 +59,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(original_tensor,spars
 
 		% Compute the estimated tensor.
 		tensor_hat = cp_combination(U,dim);
-		rmse(iter,1) = sqrt(sum((original_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
+		rmse(iter,1) = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
 
 		% Sample precision \tau_{\epsilon}.
 		var_a = a0+0.5*length(position);
@@ -113,7 +113,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(original_tensor,spars
 
 		% Compute an estimated tensor.
 		tensor_hat = cp_combination(U,dim);
-		rmse(iter,1) = sqrt(sum((original_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
+		rmse(iter,1) = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
 
 		% Sample precision \tau_{\epsilon}.
 		var_a = a0+0.5*length(position);
@@ -127,9 +127,9 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(original_tensor,spars
 
 	tensor_hat = cp_combination(factor_mat,dim);
 	final_result = cell(2,1);
-    FinalMAPE = sum(abs(original_tensor(pos)-tensor_hat(pos))./original_tensor(pos))./length(pos);
+    FinalMAPE = sum(abs(dense_tensor(pos)-tensor_hat(pos))./dense_tensor(pos))./length(pos);
     final_result{1} = FinalMAPE;
-	FinalRMSE = sqrt(sum((original_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
+	FinalRMSE = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
 	final_result{2} = FinalRMSE;
 
 	% Print the results.
