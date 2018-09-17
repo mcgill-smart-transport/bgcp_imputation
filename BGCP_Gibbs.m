@@ -78,7 +78,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
     	drawnow;
     end
 
-    %% Average factor matrices from additional 100 iterations.
+    %% Average factor matrices from additional iterations.
 	fprintf('\n------Final Result of Bayesian Gaussian CP decomposition------\n');
 	factor_mat = cell(d,1);
 	for k = 1:d
