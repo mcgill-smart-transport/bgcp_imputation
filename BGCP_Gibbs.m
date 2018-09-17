@@ -25,8 +25,8 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 	nu0 = r;
 	mu0 = zeros(r,1);
 	tau_epsilon = 1;
-	a0 = 1e-6;
-	b0 = 1e-6;
+	a0 = 1;
+	b0 = 1;
 	W0 = eye(r);
 
 	%% Test Gibbs samplers for BGCP model.
