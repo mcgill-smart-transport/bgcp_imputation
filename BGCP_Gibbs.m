@@ -58,7 +58,10 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		end
 
 		% Compute the estimated tensor.
-		tensor_hat = cp_combination(U,dim);
+		tensor_hat1 = cp_combination(U,dim);
+		tensor_hat2 = normrnd(cp_combination(U,dim),sqrt(tau_epsilon^(-1)));
+		tensor_hat = tensor_hat2;
+		tensor_hat(position) = tensor_hat1(position);
 		rmse(iter,1) = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
 
 		% Sample precision \tau_{\epsilon}.
@@ -84,6 +87,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 	for k = 1:d
 		factor_mat{k} = zeros(dim(k),r);
 	end
+	tensor_hat0 = zeros(dim);
 	iters = 500;
 	for iter = 1:iters
 		for k = 1:d
@@ -112,12 +116,13 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		end
 
 		% Compute an estimated tensor.
-		tensor_hat = cp_combination(U,dim);
-		rmse(iter,1) = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
+		tensor_hat1 = cp_combination(U,dim);
+		tensor_hat2 = normrnd(cp_combination(U,dim),sqrt(tau_epsilon^(-1)));
+		tensor_hat0 = tensor_hat0+tensor_hat2;
 
 		% Sample precision \tau_{\epsilon}.
 		var_a = a0+0.5*length(position);
-		error = sparse_tensor-tensor_hat;
+		error = sparse_tensor-tensor_hat1;
 		var_b = b0+0.5*sum(error(position).^2);
 		tau_epsilon = gamrnd(var_a,1./var_b);
 	end
@@ -125,7 +130,8 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		factor_mat{k} = factor_mat{k}./iters;
 	end
 
-	tensor_hat = cp_combination(factor_mat,dim);
+	% tensor_hat = cp_combination(factor_mat,dim);
+	tensor_hat = tensor_hat0/iters;
 	final_result = cell(2,1);
     FinalMAPE = sum(abs(dense_tensor(pos)-tensor_hat(pos))./dense_tensor(pos))./length(pos);
     final_result{1} = FinalMAPE;
