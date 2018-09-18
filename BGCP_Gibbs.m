@@ -47,13 +47,12 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 			var1 = khatrirao_fast(U{[1:k-1,k+1:d]},'r')';
 			var2 = kr(var1,var1);
 			var3 = reshape(var2*(ten2mat(binary_tensor,dim,k)'),[r,r,dim(k)]);
-			var4 = var1*ten2mat(sparse_tensor,dim,k)';
+			var4 = tau_epsilon*var1*ten2mat(sparse_tensor,dim,k)'+ones(r,dim(k)).*(Lambda_w*mu_w);
 			for i = 1:dim(k)
-				var5 = tau_epsilon.*var4(:,i)+var_Lambda0*var_mu0;
 				var_Lambda1 = tau_epsilon*var3(:,:,i)+var_Lambda0;
-				var_Lambda1 = (var_Lambda1+var_Lambda1')./2;
-				var_mu = inv(var_Lambda1)*var5;
-				U{k}(i,:) = mvnrnd(var_mu,inv(var_Lambda1));
+				inv_var_Lambda1 = inv((var_Lambda1+var_Lambda1')./2);
+				var_mu = inv_var_Lambda1*var4(:,i);
+				U{k}(i,:) = mvnrnd(var_mu,inv_var_Lambda1);
 			end
 		end
 
@@ -104,13 +103,12 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 			var1 = khatrirao_fast(U{[1:k-1,k+1:d]},'r')';
 			var2 = kr(var1,var1);
 			var3 = reshape(var2*(ten2mat(binary_tensor,dim,k)'),[r,r,dim(k)]);
-			var4 = var1*(ten2mat(sparse_tensor,dim,k)');
+			var4 = tau_epsilon*var1*ten2mat(sparse_tensor,dim,k)'+ones(r,dim(k)).*(Lambda_w*mu_w);
 			for i = 1:dim(k)
-				var5 = tau_epsilon.*var4(:,i)+var_Lambda0*var_mu0;
 				var_Lambda1 = tau_epsilon*var3(:,:,i)+var_Lambda0;
-				var_Lambda1 = (var_Lambda1+var_Lambda1')./2;
-				var_mu = inv(var_Lambda1)*var5;
-				U{k}(i,:) = mvnrnd(var_mu,inv(var_Lambda1));
+				inv_var_Lambda1 = inv((var_Lambda1+var_Lambda1')./2);
+				var_mu = inv_var_Lambda1*var4(:,i);
+				U{k}(i,:) = mvnrnd(var_mu,inv_var_Lambda1);
 			end
 			factor_mat{k} = factor_mat{k}+U{k};
 		end
