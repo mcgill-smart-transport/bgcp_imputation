@@ -72,13 +72,13 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 
 		% Print the results.
 	    fprintf('iteration = %g, RMSE = %g km/h.\n',iter,rmse(iter));
-    	set(gcf,'Units','Normalized','OuterPosition',[0,0,1,1]);
-    	for k = 1:d
-        	subplot(1,d+3,k);imagesc(U{k});colormap hot;colorbar;
-    	end
-    	subplot(1,d+3,d+1:d+3);plot(rmse(1:iter));
-    	ylim([3.0,5.7]);xlabel('iteration');ylabel('RMSE (km/h)');
-    	drawnow;
+    	% set(gcf,'Units','Normalized','OuterPosition',[0,0,1,1]);
+    	% for k = 1:d
+     %    	subplot(1,d+3,k);imagesc(U{k});colormap hot;colorbar;
+    	% end
+    	% subplot(1,d+3,d+1:d+3);plot(rmse(1:iter));
+    	% ylim([3.0,5.7]);xlabel('iteration');ylabel('RMSE (km/h)');
+    	% drawnow;
     end
 
     %% Average factor matrices from additional iterations.
@@ -130,7 +130,6 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		factor_mat{k} = factor_mat{k}./iters;
 	end
 
-	% tensor_hat = cp_combination(factor_mat,dim);
 	tensor_hat = tensor_hat0/iters;
 	final_result = cell(2,1);
     FinalMAPE = sum(abs(dense_tensor(pos)-tensor_hat(pos))./dense_tensor(pos))./length(pos);
