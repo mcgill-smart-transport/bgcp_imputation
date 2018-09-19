@@ -1,5 +1,5 @@
 function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_tensor,varargin)
-% This is a function for Bayesian Gaussian CP decomposition (BGCP) using Gibbs sampling.
+% Bayesian Gaussian CP decomposition (BGCP) using Gibbs sampling.
 
 	dim = size(sparse_tensor);
 	d = length(dim);
@@ -57,10 +57,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		end
 
 		% Compute the estimated tensor.
-		tensor_hat1 = cp_combination(U,dim);
-		tensor_hat2 = normrnd(cp_combination(U,dim),sqrt(tau_epsilon^(-1)));
-		tensor_hat = tensor_hat2;
-		tensor_hat(position) = tensor_hat1(position);
+		tensor_hat = cp_combination(U,dim);
 		rmse(iter,1) = sqrt(sum((dense_tensor(pos)-tensor_hat(pos)).^2)./length(pos));
 
 		% Sample precision \tau_{\epsilon}.
@@ -80,7 +77,7 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
     	% drawnow;
     end
 
-    %% Average factor matrices from additional iterations.
+    %% Average factor matrices over additional iterations.
 	fprintf('\n------Final Result of Bayesian Gaussian CP decomposition------\n');
 	factor_mat = cell(d,1);
 	for k = 1:d
@@ -114,9 +111,8 @@ function [tensor_hat,factor_mat,final_result] = BGCP_Gibbs(dense_tensor,sparse_t
 		end
 
 		% Compute an estimated tensor.
-		tensor_hat1 = cp_combination(U,dim);
-		tensor_hat2 = normrnd(cp_combination(U,dim),sqrt(tau_epsilon^(-1)));
-		tensor_hat0 = tensor_hat0+tensor_hat2;
+		tensor_hat = cp_combination(U,dim);
+		tensor_hat0 = tensor_hat0+tensor_hat;
 
 		% Sample precision \tau_{\epsilon}.
 		var_a = a0+0.5*length(position);
