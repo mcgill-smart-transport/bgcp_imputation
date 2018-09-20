@@ -4,3 +4,4 @@ function mat = ten2mat(tensor,dim,k)
 % 	k=1,2,...,d
 
 mat = reshape(permute(tensor,[k,1:k-1,k+1:length(dim)]),dim(k),[]);
+end
