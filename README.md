@@ -2,7 +2,7 @@
 
 Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation.
 
-# Overview
+## Overview
 
 >With the development and application of intelligent transportation systems, large quantities of urban traffic data are collected on a continuous basis from various sources, such as loop detectors, cameras, and floating vehicles. These data sets capture the underlying states and dynamics of transportation networks and the whole system and become beneficial to many traffic operation and management applications, including routing, signal control, travel time prediction, and so on. However, the missing data problem is inevitable when collecting traffic data from intelligent transportation systems.
 
@@ -10,7 +10,7 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 >**Publicly available at our Zenodo repository!**
 
-# Selected references
+## Selected references
 
 ### *Bayesian matrix factorization*
 
@@ -34,6 +34,6 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
   - Bin Ran, Huachun Tan, Yuankai Wu, Peter J. Jinc, 2016. [*Tensor Based Missing Traffic Data Completion with Spatial–temporal Correlation*](https://doi.org/10.1016/j.physa.2015.09.105). Physica A: Statistical Mechanics and its Applications, 446: 54-63.
 
-# Publications
+## Publication
 
   - Xinyu Chen, Zhaocheng He, Lijun Sun, 2018. *A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*. Transportation Research Part C: Emerging Technologies. (*under review*)
