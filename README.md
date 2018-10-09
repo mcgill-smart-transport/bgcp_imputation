@@ -12,13 +12,13 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 ## Selected references
 
-### *Bayesian matrix factorization*
+- ***Bayesian matrix factorization***
 
   - Ruslan Salakhutdinov, Andriy Mnih, 2008. [*Bayesian Probabilistic Matrix Factorization using Markov Chain Monte Carlo*](https://www.cs.toronto.edu/~amnih/papers/bpmf.pdf). Proceedings of the 25th International Conference on Machine Learning (*ICML 2008*), Helsinki, Finland.
 
   - Li Li, Yuebiao Li, Zhiheng Li, 2013. [*Efficient Missing Data Imputing for Traffic Flow by Considering Temporal and Spatial Dependence*](https://doi.org/10.1016/j.trc.2013.05.008). Transportation Research Part C: Emerging Technologies, 34: 108-120.
 
-### *Bayesian tensor factorization*
+- ***Bayesian tensor factorization***
 
   - Liang Xiong, Xi Chen, Tzu-Kuo Huang, Jeff Schneider, Jaime G. Carbonell, 2010. [*Temporal Collaborative Filtering with Bayesian Probabilistic Tensor Factorization*](https://www.cs.cmu.edu/~jgc/publication/PublicationPDF/Temporal_Collaborative_Filtering_With_Bayesian_Probabilidtic_Tensor_Factorization.pdf). Proceedings of the 2010 SIAM International Conference on Data Mining. SIAM, pp. 211-222.
 
@@ -28,11 +28,11 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
   - Piyush Rai, Yingjian Wang, Shengbo Guo, Gary Chen, David B. Dunsun,	Lawrence Carin, 2014. [*Scalable Bayesian Low-rank Decomposition of Incomplete Multiway Tensors*](http://people.ee.duke.edu/~lcarin/mpgcp.pdf). Proceedings of the 31st International Conference on Machine Learning (*ICML 2014*), Beijing, China.
 
-### *Low-rank tensor completion*
+- ***Low-rank tensor completion***
 
   - Ji Liu, Przemyslaw Musialski, Peter Wonka, Jieping Ye, 2013. [*Tensor Completion for Estimating Missing Values in Visual Data*](https://doi.org/10.1109/TPAMI.2012.39). IEEE Transactions on Pattern Analysis and Machine Intelligence, 35(1): 208-220.
 
-  - Bin Ran, Huachun Tan, Yuankai Wu, Peter J. Jinc, 2016. [*Tensor Based Missing Traffic Data Completion with Spatial–temporal Correlation*](https://doi.org/10.1016/j.physa.2015.09.105). Physica A: Statistical Mechanics and its Applications, 446: 54-63.
+  - Bin Ran, Huachun Tan, Yuankai Wu, Peter J. Jin, 2016. [*Tensor Based Missing Traffic Data Completion with Spatial–temporal Correlation*](https://doi.org/10.1016/j.physa.2015.09.105). Physica A: Statistical Mechanics and its Applications, 446: 54-63.
 
 ## Publication
 
