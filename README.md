@@ -10,6 +10,14 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 >**Publicly available at our Zenodo repository!**
 
+![example](https://github.com/xinychen/transdim/blob/master/images/estimated_series1.png)
+  *(a) Time series of actual and estimated speed within two weeks from August 1 to 14.*
+
+![example](https://github.com/xinychen/transdim/blob/master/images/estimated_series2.png)
+  *(b) Time series of actual and estimated speed within two weeks from September 12 to 25.*
+
+*Figure 1: The imputation performance of BGCP (CP rank r=15 and missing rate α=30%) under the fiber missing scenario with third-order tensor representation, where the estimated result of road segment #1 is selected as an example. In the both two panels, red rectangles represent fiber missing (i.e., speed observations are lost in a whole day).*
+
 ## Selected references
 
 - ***Bayesian matrix factorization***
@@ -36,4 +44,4 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 ## Publication
 
-  - Xinyu Chen, Zhaocheng He, Lijun Sun, 2018. *A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*. Transportation Research Part C: Emerging Technologies. (*under review*)
+  - Xinyu Chen, Zhaocheng He, Lijun Sun, 2018. [*A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*](https://doi.org/10.1016/j.trc.2018.11.003). Transportation Research Part C: Emerging Technologies, 98: 73-84.
