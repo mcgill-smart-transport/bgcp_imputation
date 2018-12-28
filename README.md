@@ -44,4 +44,4 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 ## Publication
 
-  - Xinyu Chen, Zhaocheng He, Lijun Sun, 2018. [*A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*](https://doi.org/10.1016/j.trc.2018.11.003). Transportation Research Part C: Emerging Technologies, 98: 73-84.
+  - Xinyu Chen, Zhaocheng He, Lijun Sun, 2019. [*A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*](https://doi.org/10.1016/j.trc.2018.11.003). Transportation Research Part C: Emerging Technologies, 98: 73-84.
