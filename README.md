@@ -1,6 +1,6 @@
 # *BGCP*
 
-Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation.
+Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation. [BGCP example - Jupyter notebook](https://nbviewer.jupyter.org/github/xinychen/transdim/blob/master/BGCP_example.ipynb)
 
 ## Overview
 
