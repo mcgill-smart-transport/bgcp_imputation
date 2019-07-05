@@ -1,6 +1,6 @@
 # *BGCP*
 
-Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation. [[**BGCP example using Matlab - Jupyter notebook**](https://nbviewer.jupyter.org/github/xinychen/transdim/blob/master/BGCP_example.ipynb)] [[**Python code - Jupyter notebook**](https://nbviewer.jupyter.org/github/xinychen/transdim/blob/master/Imputation-BGCP-Gdata.ipynb)]
+Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Imputation. [[**Python code**](https://github.com/xinychen/transdim)]
 
 ## Overview
 
@@ -42,6 +42,8 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
   - Bin Ran, Huachun Tan, Yuankai Wu, Peter J. Jin, 2016. [*Tensor Based Missing Traffic Data Completion with Spatial–temporal Correlation*](https://doi.org/10.1016/j.physa.2015.09.105). Physica A: Statistical Mechanics and its Applications, 446: 54-63.
 
-## Publication
+## Our Publication
 
   - Xinyu Chen, Zhaocheng He, Lijun Sun, 2019. [*A Bayesian tensor decomposition approach for spatiotemporal traffic data imputation*](https://doi.org/10.1016/j.trc.2018.11.003). Transportation Research Part C: Emerging Technologies, 98: 73-84.
+
+>Please consider citing our papers if they help your research.
