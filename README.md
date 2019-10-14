@@ -18,7 +18,7 @@ Bayesian Gaussian Tensor Decomposition Approach for Incomplete Traffic Data Impu
 
 *Figure 1: The imputation performance of BGCP (CP rank r=15 and missing rate α=30%) under the fiber missing scenario with third-order tensor representation, where the estimated result of road segment #1 is selected as an example. In the both two panels, red rectangles represent fiber missing (i.e., speed observations are lost in a whole day).*
 
-## Selected references
+## Selected References
 
 - ***Bayesian matrix factorization***
 
